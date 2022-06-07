@@ -2,11 +2,11 @@ package dprng
 
 import "io"
 
-func NewRandReader(seed int) io.Reader {
+func NewRandReader(seed int64) io.Reader {
 	if seed < 0 {
 		seed = -seed
 	}
-	return &prngReader{s: seed % seedSize}
+	return &prngReader{s: int(seed % seedSize)}
 }
 
 // prngReader implements an io.Reader that returns pseudorandom bytes.

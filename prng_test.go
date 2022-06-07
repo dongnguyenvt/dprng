@@ -11,7 +11,7 @@ func TestRandReader(t *testing.T) {
 	testRandReader(t, 5000)
 }
 
-func testRandReader(t *testing.T, seed int) {
+func testRandReader(t *testing.T, seed int64) {
 	r := NewRandReader(seed)
 	buf := make([]byte, 128)
 	if _, err := r.Read(buf); err != nil {
