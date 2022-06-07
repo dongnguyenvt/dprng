@@ -1,0 +1,2 @@
+# dprng
+Deterministic PRNG
